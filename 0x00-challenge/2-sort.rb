@@ -23,4 +23,6 @@ ARGV.each do |arg|
     end
 end
 
-puts result.join(" ")
+result.sort.each do |num|
+    puts num
+end

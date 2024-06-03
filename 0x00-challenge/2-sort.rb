@@ -15,9 +15,12 @@ ARGV.each do |arg|
     i_arg = arg.to_i
     
     # insert result at the right position
-    result.bsearch_index { |x| x <=> i_arg } do |index|
+    index = result.bsearch_index { |x| x <=> i_arg }
+    if index.nil?
+        result << i_arg
+    else
         result.insert(index, i_arg)
     end
 end
 
-puts result
+puts result.join(" ")
